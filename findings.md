@@ -40,8 +40,33 @@ List all services
 
 `kubectl get service`
 
+To see what's going on with pods, use describe and look at the events section
+
+`kubectl describe pods <POD>`
+
 ## Minikube
 
 Once the service is exposed you can open it in the browser using:
 
 `minikube service workshop-kubernetes`
+
+## GCloud
+
+Inital setup (including authentication) can be done via
+
+`gcloud init`
+
+Create the cluster
+
+`gcloud container clusters create workshop-kubernetes --num-nodes=2 --machine-type=n1-standard2`
+
+## Useful links
+
+Running kubernetes locally:
+
+https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/
+
+Google Cloud quickstart with Kubernetes:
+
+https://cloud.google.com/container-engine/docs/quickstart
+
