@@ -17,3 +17,5 @@ coverage.*
 junit.xml
 public
 scanLogs
+account-key.json
+.ruby-version
