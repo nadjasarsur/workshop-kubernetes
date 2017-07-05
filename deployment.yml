@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1 # for versions before 1.6.0 use extensions/v1beta1
+kind: Deployment
+metadata:
+  name: workshop-kubernetes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: web
+  template:
+    metadata:
+      labels:
+        name: web
+    spec:
+      containers:
+      - name: redis
+        image: redis
+        ports:
+        - containerPort: 6379
+      - name: workshop
+        image: workshop:latest
+        env:
+        - name: REDIS_HOST
+          value: localhost
+        - name: REDIS_PASSWORD
+          value:
+        ports:
+        - containerPort: 9000
