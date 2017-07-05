@@ -16,6 +16,10 @@ List all deployments
 
 `kubectl get deployment`
 
+Delete kubernetes pods:
+
+`kubectl delete pods <pod-name>`
+
 Delete kubernetes deployment:
 
 `kubectl delete deployment <deployment-name>`
