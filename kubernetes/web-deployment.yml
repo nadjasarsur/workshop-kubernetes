@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1 # for versions before 1.6.0 use extensions/v1beta1
+kind: Deployment
+metadata:
+  name: workshop-kubernetes-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: web
+  template:
+    metadata:
+      labels:
+        name: web
+    spec:
+      containers:
+      - name: web
+        image: gcr.io/techops-infradel/web
+        env:
+        - name: REDIS_HOST
+          value: workshop-kubernetes-redis.svc.cluster.local
+        - name: REDIS_PASSWORD
+          value:
+        ports:
+        - containerPort: 9000
