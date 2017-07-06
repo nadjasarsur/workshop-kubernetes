@@ -19,3 +19,7 @@ public
 scanLogs
 account-key.json
 .ruby-version
+
+terraform/infrastructure.plan
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
