@@ -18,7 +18,7 @@ spec:
         ports:
         - containerPort: 6379
       - name: workshop
-        image: workshop:latest
+        image: gcr.io/techops-infradel/workshop
         env:
         - name: REDIS_HOST
           value: localhost
