@@ -60,9 +60,17 @@ Inital setup (including authentication) can be done via
 
 `gcloud init`
 
+Login and authenticate with Google Cloud
+
+`gcloud auth application-default login`
+
 Create the cluster
 
 `gcloud container clusters create workshop-kubernetes --num-nodes=2 --machine-type=n1-standard2`
+
+Update kubectl configuration to point to a cluster
+
+`gcloud container clusters get-credentials workshop-kubernetes-staffing -z=europe-west1-c`
 
 ## Useful links
 
@@ -73,4 +81,3 @@ https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/
 Google Cloud quickstart with Kubernetes:
 
 https://cloud.google.com/container-engine/docs/quickstart
-
