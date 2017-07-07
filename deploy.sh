@@ -1,5 +1,6 @@
 #!/bin/bash
 
+gcloud container clusters get-credentials workshop-kubernetes-staffing --zone=europe-west1-c
 cd terraform; terraform destroy -force
 
 cd ..; docker-compose build
