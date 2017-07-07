@@ -5,12 +5,12 @@ RUN yum -y install epel-release
 RUN yum -y install nodejs npm
 
 ENV APP_HOME /app
+WORKDIR $APP_HOME
 COPY package.json $APP_HOME/
 
 RUN npm install
 
 COPY . $APP_HOME/
-WORKDIR $APP_HOME
 
 RUN npm run assets
 
