@@ -20,5 +20,5 @@ kubectl create -f kubernetes/web-service.yml
 echo """
 Run the following to open up the application in your browser
 EXTERNAL_IP=\$(kubectl describe services workshop-kubernetes-web | grep "LoadBalancer Ingress" | cut -f2)
-open http://$EXTERNAL_IP:9000
+open http://\$EXTERNAL_IP:9000
 """
