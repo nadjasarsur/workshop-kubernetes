@@ -17,7 +17,7 @@ spec:
         image: gcr.io/techops-infradel/web
         env:
         - name: REDIS_HOST
-          value: workshop-kubernetes-redis.svc.cluster.local
+          value: workshop-kubernetes-redis.default.svc.cluster.local
         - name: REDIS_PASSWORD
           value:
         ports:
