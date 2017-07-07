@@ -68,6 +68,10 @@ Create the cluster
 
 `gcloud container clusters create workshop-kubernetes --num-nodes=2 --machine-type=n1-standard2`
 
+Update kubectl configuration to point to a cluster
+
+`gcloud container clusters get-credentials workshop-kubernetes-staffing -z=europe-west1-c`
+
 ## Useful links
 
 Running kubernetes locally:
@@ -77,10 +81,3 @@ https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/
 Google Cloud quickstart with Kubernetes:
 
 https://cloud.google.com/container-engine/docs/quickstart
-
-## Potential issues
-
-### Creating/Deleting clusters on GCloud
-
-If one user creates a cluster on gcloud using terraform others running the same script can't destroy it - terraform doesn't find the cluster. If we try to create the cluster anyways gcloud will say it already exists and won't create a new one. Manually deleting the cluster on gcloud web console works fine - regardless of who created the cluster.
-
